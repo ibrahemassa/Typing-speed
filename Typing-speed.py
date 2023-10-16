@@ -24,6 +24,8 @@ def check_sim(event):
     words_count = len(words)
     wpm = int(words_count*60/elapsed_time)
     sim_text.config(text=f'{similarity:.1f}%\n{wpm} WPM.', font=("Helvetica", 20))
+    restart_btn.pack()
+
 
 
 def restart_program():
@@ -37,6 +39,7 @@ def restart_program():
     start_time = time.time()
     sim_text.config(text='')
     input_box.delete(0, 'end')
+    restart_btn.pack_forget()
 
 
 window = Tk()
@@ -59,6 +62,5 @@ sim_text = Label()
 sim_text.pack()
 
 restart_btn = Button(text='Restart!!', command=restart_program)
-restart_btn.pack()
 
 window.mainloop()
