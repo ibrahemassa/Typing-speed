@@ -27,7 +27,6 @@ def check_sim(event):
     restart_btn.pack()
 
 
-
 def restart_program():
     global quote
     global start_time
